@@ -1,0 +1,37 @@
+
+<mat-spinner *ngIf="showLoader" class="loader"></mat-spinner>
+<div class="container">
+    <h2>Upload A Pdf File</h2>
+    <form [formGroup]="uploadFile" (ngSubmit)="submit()">
+        <div class="form-control">
+            <label for="name">Name: </label>
+            <input id="name" type="text" formControlName="fileName">
+        </div>
+        <!-- <div class="form-control">
+            <label for="file">PDF File: </label>
+            <input id="file" formControlName="file" class="file-input" type="file">
+        </div> -->
+        <app-file-upload formControlName="file" [progress]="progress"></app-file-upload>
+        <button type="submit" [disabled]="!formValid">Submit</button>
+    </form>
+</div>
+<div class="uploaded-files">
+    <h2 style="text-align: center;">Files Already Uploaded</h2>
+    <table style="margin-left: 20px;">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>FileName</th>
+                <th>Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of files">
+                <td>{{item.id}}</td>
+                <td>{{item.fileName}}</td>
+                <td>{{item.fileUrl}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<router-outlet></router-outlet>

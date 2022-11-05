@@ -1,0 +1,47 @@
+.container{
+    background: antiquewhite;
+    width: 504px;
+    padding: 100px;
+    display: inline-block;
+    height: 194%;
+}
+
+.uploaded-files{
+    display: inline-block;
+    background-color: aqua;
+    width: calc(100% - 705px);
+    float: right;
+    padding: 50px 0;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+button {
+    display: block;
+    padding: 5px 10px;
+    margin-top: 10px;
+    color: #fff;
+    background-color: forestgreen;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: -internal-light-dark(rgba(239, 239, 239, 0.3), rgba(19, 1, 1, 0.3));
+    color: -internal-light-dark(rgba(16, 16, 16, 0.3), rgba(255, 255, 255, 0.3));
+    border-color: -internal-light-dark(rgba(118, 118, 118, 0.3), rgba(195, 195, 195, 0.3));
+    cursor : not-allowed;
+}
+mat-spinner.loader {
+    margin: 13px auto;
+    position: absolute;
+    top: 0%;
+    left: 30%;
+}
+
+.form-control {
+    margin: 15px 0;
+}
